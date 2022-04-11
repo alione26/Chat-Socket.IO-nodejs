@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>الشات</title>
+  <link rel="stylesheet" href="/public/main.css">
+</head>
+<body  dir="rtl" >
+  <div class="mario-chat" dir="auto">
+    <div  dir="rtl" class="chat-window">
+      <div  dir="rtl" class="output container" id="output" >
+        <% messages.map(msg => { %>
+       
+            <!-- <div class="cha" >
+            <div style="float:left; "> <%= msg.time %> </div>
+            </div> -->
+            <div class="cha">
+            <div style="" class="mass-h">  <strong><%= msg.name %> </strong> </div>
+            <div class="mass-body">  <%= msg.message %> </div>
+          </div>
+            <br/>
+            
+        <% }); %>
+      </div>
+
+
+
+      <div id="feedback"></div>
+    </div>
+    <input type="text" id="name" placeholder="الاسم">
+    <input type="text" id="message" placeholder="الرسالة">
+    <button id="send">ارسال</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/public/main.js"></script>
+</body>
+</html>
